@@ -24,8 +24,6 @@ ENV CC /opt/rh/devtoolset-2/root/usr/bin/gcc
 ENV CXX /opt/rh/devtoolset-2/root/usr/bin/g++
 ENV FC /opt/rh/devtoolset-2/root/usr/bin/gfortran
 
-# Build and install git from source.
-RUN yum install git
 
 # Build and install CMake from source.
 WORKDIR /usr/src
