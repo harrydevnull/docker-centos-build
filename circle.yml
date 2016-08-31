@@ -5,8 +5,8 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker pull thewtex/centos-build
+    - docker pull harrydevnull/centos-build
 
 test:
   override:
-    - docker build -t thewtex/centos-build ~/docker-centos-build/
+    - docker build -t harrydevnull/centos-build ~/docker-centos-build/

@@ -1,5 +1,5 @@
-FROM centos:5
-MAINTAINER Matt McCormick <matt.mccormick@kitware.com>
+FROM centos:6
+MAINTAINER harry <hareendran.c.nair@gmail.com>
 
 RUN yum update -y && \
   yum groupinstall -y "Development Tools" && \
@@ -25,15 +25,7 @@ ENV CXX /opt/rh/devtoolset-2/root/usr/bin/g++
 ENV FC /opt/rh/devtoolset-2/root/usr/bin/gfortran
 
 # Build and install git from source.
-WORKDIR /usr/src
-ENV GIT_VERSION 2.5.0
-RUN wget https://www.kernel.org/pub/software/scm/git/git-${GIT_VERSION}.tar.gz && \
-  tar xvzf git-${GIT_VERSION}.tar.gz && \
-  cd git-${GIT_VERSION} && \
-  ./configure --prefix=/usr && \
-  make && \
-  make install && \
-  cd .. && rm -rf git-${GIT_VERSION}*
+RUN yum install git
 
 # Build and install CMake from source.
 WORKDIR /usr/src
